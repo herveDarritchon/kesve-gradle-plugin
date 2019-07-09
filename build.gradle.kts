@@ -1,7 +1,9 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm") version "1.3.31"
+    `java-gradle-plugin`
+    //kotlin("jvm") version "1.3.41"
+    `kotlin-dsl`
+    `maven-publish`
+    groovy
 }
 
 group = "fr.hervedarritchon.utils.kesve"
@@ -11,10 +13,18 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    implementation(kotlin("stdlib-jdk8"))
+gradlePlugin {
+    plugins {
+        create("kesvePlugin") {
+            id = "fr.hervedarritchon.utils.kesve-plugin"
+            implementationClass = "fr.hervedarritchon.utils.kesve.KesvePlugin"
+        }
+    }
 }
+ //apply<KesvePlugin>()
 
-tasks.withType<KotlinCompile> {
-    kotlinOptions.jvmTarget = "1.8"
+publishing {
+    repositories {
+        maven(url = "build/repository")
+    }
 }
