@@ -3,7 +3,7 @@ buildscript {
         mavenLocal()
     }
     dependencies {
-        classpath("fr.hdarritchon.sample:greeting-plugin:0.0.1-SNAPSHOT")
+        classpath("fr.hdarritchon.sample:greeting-plugin:0.0.2-SNAPSHOT")
     }
 }
 
@@ -20,12 +20,10 @@ group = "fr.hdarritchon.sample"
 
 repositories {
     mavenCentral()
-    mavenLocal()
 }
 
 dependencies {
-
-    implementation("fr.hdarritchon.sample:greeting-plugin:0.0.1-SNAPSHOT")
+    implementation("fr.hdarritchon.sample:greeting-plugin:0.0.2-SNAPSHOT")
     implementation(kotlin("stdlib-jdk8"))
 }
 
@@ -39,17 +37,5 @@ gradlePlugin {
             id = "fr.hdarritchon.sample.goodbye"
             implementationClass = "fr.hdarritchon.sample.goodbye.GoodbyePlugin"
         }
-    }
-}
-
-allprojects {
-    repositories {
-        mavenLocal()
-    }
-}
-
-publishing {
-    repositories {
-        mavenLocal()
     }
 }
