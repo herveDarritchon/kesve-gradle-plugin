@@ -4,7 +4,7 @@ plugins {
     `kotlin-dsl`
 }
 
-group = "fr.hdarritchon.sample"
+group = "fr.hdarritchon.utils.kesve"
 
 repositories {
     mavenCentral()
@@ -16,13 +16,9 @@ dependencies {
 
 gradlePlugin {
     plugins {
-        create("hello") {
-            id = "fr.hdarritchon.sample.hello"
-            implementationClass = "fr.hdarritchon.sample.hello.HelloPlugin"
-        }
-        create("goodbye") {
-            id = "fr.hdarritchon.sample.goodbye"
-            implementationClass = "fr.hdarritchon.sample.goodbye.GoodbyePlugin"
+        create("kesve-gradle-plugin") {
+            id = "fr.hdarritchon.utils.kesve.kesve-gradle-plugin"
+            implementationClass = "fr.hdarritchon.utils.kesve.KesveGradlePlugin"
         }
     }
 }

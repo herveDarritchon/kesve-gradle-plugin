@@ -1,1 +1,1 @@
-rootProject.name = "greeting-plugin"
+rootProject.name = "kesve-gradle-plugin"
