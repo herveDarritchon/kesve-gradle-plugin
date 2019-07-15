@@ -1,20 +1,8 @@
-buildscript {
-    repositories {
-        mavenLocal()
-    }
-    dependencies {
-        classpath("fr.hdarritchon.sample:greeting-plugin:0.0.2-SNAPSHOT")
-    }
-}
-
 plugins {
     `maven-publish`
     `java-gradle-plugin`
     `kotlin-dsl`
 }
-
-apply(plugin="fr.hdarritchon.sample.hello")
-apply(plugin="fr.hdarritchon.sample.goodbye")
 
 group = "fr.hdarritchon.sample"
 
@@ -23,7 +11,6 @@ repositories {
 }
 
 dependencies {
-    implementation("fr.hdarritchon.sample:greeting-plugin:0.0.2-SNAPSHOT")
     implementation(kotlin("stdlib-jdk8"))
 }
 
